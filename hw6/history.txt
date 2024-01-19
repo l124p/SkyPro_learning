@@ -1,0 +1,4 @@
+jonh 10
+did 20
+gus 20
+sdfsf 0
