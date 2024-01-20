@@ -1,0 +1,17 @@
+questions = {
+  "Transport": {
+    "100": {"question": "plane", "answer": "самолет", "asked": "True"},
+    "200": {"question": "train", "answer": "поезд", "asked": "True"},
+    "300": {"question": "boarding", "answer": "посадка", "asked": "True"}
+  },
+  "Animal": {
+    "100": {"question": "dog", "answer": "собака", "asked": "True"},
+    "200": {"question": "shark", "answer": "акула", "asked": "True"},
+    "300": {"question": "sparrow", "answer": "воробей", "asked": "True"}
+  },
+  "Food": {
+    "100": {"question": "apple", "яблоко": "самолет", "asked": "True"},
+    "200": {"question": "berry", "ягода": "поезд", "asked": "True"},
+    "300": {"question": "venison", "answer": "оленина", "asked": "True"}
+  }
+}
