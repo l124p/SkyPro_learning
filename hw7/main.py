@@ -23,10 +23,15 @@ def show_question(category, price, questions):
         return True
 
 
-def show_stats(answer, category, price, questions):
+def show_stats(point, result):
     """Выводит статистику"""
     pass
 
+def count_results(answer, category, price, questions):
+    if answer == questions[category.title()][price].get('answer'):
+       return int(price) , 1
+    else:
+        return -int(price), 0
 def save_results_to_file(answer):
     """Записывает резулбтаты в JSON файл"""
     pass
@@ -41,6 +46,7 @@ def main():
         if not show_question(category, price, questions):
             continue
         answer = input('Введите ответ:\n')
-        show_stats(answer, category, price, questions)
+        point, result = count_results(answer, category, price, questions)
+        show_stats(point, result)
         save_results_to_file(answer)
 main()
