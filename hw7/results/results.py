@@ -9,15 +9,15 @@ def show_stats(answer, category, price, questions, points, results):
     else:
         points -= int(price)
         results.append(False)
-        print(f'Неверно, на самом деле - {questions[category.title()][price]['answer']}.'
-              f' -{price}. Ваш счёт  = {points}')
+        print(f"Неверно, на самом деле - {questions[category.title()][price]['answer']}."
+              f" -{price}. Ваш счёт  = {points}")
         return points
 
 
 def save_results_to_file(points, correct_answers, incorrect_answers):
     """Записывает резулбтаты в JSON файл"""
-    with open('results.txt', 'w+') as f:
+    with open('results.json', 'w+') as f:
         results = {'points': points,
                    'correct_answers': correct_answers,
                    'incorrect_answers': incorrect_answers}
-        json.dumps(results)
+        json.dump(results, f)

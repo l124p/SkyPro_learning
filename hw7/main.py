@@ -20,9 +20,9 @@ def main():
     correct_answers = sum(results)
     incorrect_answers = len(results) - sum(results)
     print('У нас закончились вопросы')
-    print(f'Ваш счет: {points}'
-          f'Верных ответов {correct_answers}'
-          f'Неверных ответов{incorrect_answers}')
+    print(f'Ваш счет: {points}\n'
+          f'Верных ответов: {correct_answers}\n'
+          f'Неверных ответов: {incorrect_answers}\n')
     save_results_to_file(points, correct_answers, incorrect_answers)
 
 
