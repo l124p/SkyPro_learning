@@ -1,3 +1,4 @@
+from os import system
 from hw7.question.load_data import load_questions
 from hw7.draw_field.draw_field import show_fileld
 from hw7.question.user_input import parse_input
@@ -15,6 +16,7 @@ def main():
         if not show_question(category, price, questions):
             continue
         answer = input('Введите ответ:\n')
+        system('cls')
         points = show_stats(answer, category, price, questions, points, results)
 
     correct_answers = sum(results)

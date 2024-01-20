@@ -15,7 +15,7 @@ def show_stats(answer, category, price, questions, points, results):
 
 
 def save_results_to_file(points, correct_answers, incorrect_answers):
-    """Записывает резулбтаты в JSON файл"""
+    """Записывает результаты в JSON файл"""
     with open('results.json', 'w+') as f:
         results = {'points': points,
                    'correct_answers': correct_answers,
