@@ -1,4 +1,3 @@
-from load_data import load_questions
 def show_fileld(questions):
     """выводит игровое поле"""
     for category, prices in questions.items():

@@ -36,12 +36,12 @@
   "Food": {
     "100": {
       "question": "apple",
-      "яблоко": "самолет",
+      "answer": "яблоко",
       "asked": true
     },
     "200": {
       "question": "berry",
-      "ягода": "поезд",
+      "answer": "ягода",
       "asked": true
     },
     "300": {
