@@ -1,4 +1,7 @@
 import json
+
+
+path = 'results.json'
 def show_stats(answer, category, price, questions, points, results):
 
     if answer == questions[category.title()][price].get('answer'):
@@ -16,8 +19,14 @@ def show_stats(answer, category, price, questions, points, results):
 
 def save_results_to_file(points, correct_answers, incorrect_answers):
     """Записывает результаты в JSON файл"""
-    with open('results.json', 'w+') as f:
-        results = {'points': points,
+
+    with open(path, 'r') as f:
+         results_all = json.load(f)
+
+    results_all.append({'points': points,
                    'correct_answers': correct_answers,
-                   'incorrect_answers': incorrect_answers}
-        json.dump(results, f)
+                   'incorrect_answers': incorrect_answers})
+
+    with open('results.json', 'w') as f:
+        json.dump(results_all, f)
+

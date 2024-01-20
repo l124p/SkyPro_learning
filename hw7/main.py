@@ -3,7 +3,7 @@ from hw7.question.load_data import load_questions
 from hw7.draw_field.draw_field import show_fileld
 from hw7.question.user_input import parse_input
 from hw7.question.show_question import show_question
-from results.results import *
+from results.results import show_stats, save_results_to_file
 
 
 def main():
