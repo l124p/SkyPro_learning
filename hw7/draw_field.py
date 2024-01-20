@@ -1,12 +1,16 @@
 from load_data import load_questions
-def show_fileld():
+def show_fileld(questions):
     """выводит игровое поле"""
-    questions = load_questions()
     for category, prices in questions.items():
         print('-'*44)
         print(f"| {category.ljust(15)}|",end='')
         for price in prices:
-            print(f"  {price}  |",end=' ')
+            if prices[price]['asked']:
+                print(f"  {price}  |",end=' ')
+            else:
+                print(f"  --- |", end=' ')
             pass
         print()
     print('-' * 44)
+
+#show_fileld()

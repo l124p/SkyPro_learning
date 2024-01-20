@@ -6,12 +6,24 @@ def parse_input():
     return category, price
 def show_question(category, price, questions):
     """Печатает вопрос"""
-    print(f"Слово {questions[category.title()][price]['question']} в переводе означает?")
-    questions[category.title()][price]['asked'] = False
-    questions[category.title()][price] = '---'
-    print(questions)
+    #print(questions[category.title()][price]['asked'])
+    if not questions.get(category.title(),False):
+        print('Нет такой категории. Попробуйте еще раз')
+        return False
+    elif not questions[category.title()].get(price,False):
+        print('Нет такого вопроса. Попробуйте еще раз')
+        return False
+    elif not questions[category.title()][price]['asked']:
+            print('Вопрос уже был задан. Попробуйте еще раз')
+            return False
+    else:
+        quest = questions[category.title()][price].get('question')
+        print(f"Слово {quest} в переводе означает?")
+        questions[category.title()][price]['asked'] = False
+        return True
 
-def show_stats():
+
+def show_stats(answer, category, price, questions):
     """Выводит статистику"""
     pass
 
@@ -24,9 +36,11 @@ def main():
     questions = load_questions()
     #print(questions)
     for i in range(5):
-        show_fileld()
+        show_fileld(questions)
         category, price = parse_input()
-        show_question(category, price, questions)
+        if not show_question(category, price, questions):
+            continue
         answer = input('Введите ответ:\n')
+        show_stats(answer, category, price, questions)
         save_results_to_file(answer)
 main()
