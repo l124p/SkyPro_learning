@@ -1,13 +1,10 @@
 from clasess.player import Player
 from utils import load_random_word, validate_word
 
-url = 'https://jsonkeeper.com/b/NX3W'
-
-
 
 def main ():
 
-    basic_word = load_random_word(url)
+    basic_word = load_random_word()
 
     user_name = input("Введите имя игрока:\n")
     player = Player(user_name)

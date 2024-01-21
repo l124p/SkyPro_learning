@@ -13,7 +13,7 @@ class Player:
 
     def check_word(self, word):
         """Проверяет использовано ли уже слово"""
-        return word in self.user_words
+        return word.lower() in self.user_words
 
     def __repr__(self):
         return f"Игрок: {self.name}. Угаданные слова: {self.user_words}"

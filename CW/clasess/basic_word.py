@@ -6,7 +6,7 @@ class BasicWord:
 
     def check(self, word):
         """Проверяет наличие исходного слова в списке из слов"""
-        return word in self.words
+        return word.lower() in self.words
 
     def count(self):
        """Cчитает количества возможных подслов"""
