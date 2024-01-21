@@ -1,18 +1,16 @@
 class BasicWord:
-    word = '' #исходное слово
-    words = []#набор доступных подслов
 
     def __init__(self, word, words):
-        self.word = word
-        self.words = words
+        self.word = word #исходное слово
+        self.words = words #набор доступных подслов
 
     def __repr__ (self):
         return f"\nСлово:{self.word}.\nНаборы со слова:{self.words}"
 
-    def check(self):
-        pass
-    #Проверка исходного слова в списке
+    def check(self, word):
+        """Проверяет наличие исходного слова в списке из слов"""
+        return word in self.words
 
     def count(self):
-        pass
-    #Подсчет количества подслов
+       """Cчитает количества возможных подслов"""
+       return len(self.words)
