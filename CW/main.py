@@ -1,20 +1,9 @@
 from clasess.player import Player
-from utils import load_random_word
+from utils import load_random_word, validate_word
 
 url = 'https://jsonkeeper.com/b/NX3W'
 
-def validate_word(word, player, basic_word):
-    if len(word) < 3:
-        print("Слишком короткое слово")
-        return False
-    elif not basic_word.check(word):
-        print("неверно")
-        return False
-    elif player.check_word(word):
-        print("уже использовано")
-        return False
-    else:
-        return True
+
 
 def main ():
 
@@ -31,11 +20,10 @@ def main ():
 
     count_words = basic_word.count()
     while len(player.user_words) < count_words:
-        user_answer = input()
+        user_answer = input("Введите слово:\n")
         if user_answer.lower() in ('stop','стоп'):
             break
         elif not validate_word(user_answer, player, basic_word):
-            print("Ошибка валидации")
             continue
         else:
             player.user_words.append(user_answer.lower())

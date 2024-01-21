@@ -8,11 +8,11 @@ class Player:
         return len(self.user_words)
 
     def add_word(self, word):
+        """Добавляет слово в список угаданных слов"""
         self.user_words.append(word)
-        pass
 
     def check_word(self, word):
-        """Проверка использовано ли уже слово"""
+        """Проверяет использовано ли уже слово"""
         return word in self.user_words
 
     def __repr__(self):
